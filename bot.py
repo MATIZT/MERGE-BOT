@@ -470,31 +470,23 @@ async def help_msg(c: Client, m: Message):
 async def about_handler(c: Client, m: Message):
     await m.reply_text(
         text="""
-**ᴡʜᴀᴛ's ɴᴇᴡ:**
-👨‍💻 ʙᴀɴ/ᴜɴʙᴀɴ ᴜsᴇʀs
-👨‍💻 ᴇxᴛʀᴀᴄᴛ ᴀʟʟ ᴀᴜᴅɪᴏs ᴀɴᴅ sᴜʙᴛɪᴛʟᴇs ғʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ
-👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + ᴀᴜᴅɪᴏ 
-👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + sᴜʙᴛɪᴛʟᴇs
-👨‍💻 ᴜᴘʟᴏᴀᴅ ᴛᴏ ᴅʀɪᴠᴇ ᴜsɪɴɢ ʏᴏᴜʀ ᴏᴡɴ ʀᴄʟᴏɴᴇ ᴄᴏɴғɪɢ
-👨‍💻 ᴍᴇʀɢᴇᴅ ᴠɪᴅᴇᴏ ᴘʀᴇsᴇʀᴠᴇs ᴀʟʟ sᴛʀᴇᴀᴍs ᴏғ ᴛʜᴇ ғɪʀsᴛ ᴠɪᴅᴇᴏ ʏᴏᴜ sᴇɴᴅ (ɪ.ᴇ ᴀʟʟ ᴀᴜᴅɪᴏᴛʀᴀᴄᴋs/sᴜʙᴛɪᴛʟᴇs)
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-**ғᴇᴀᴛᴜʀᴇs**
-🔰 ᴍᴇʀɢᴇ ᴜᴘᴛᴏ 𝟷𝟶 ᴠɪᴅᴇᴏ ɪɴ ᴏɴᴇ 
-🔰 ᴜᴘʟᴏᴀᴅ ᴀs ᴅᴏᴄᴜᴍᴇɴᴛs/ᴠɪᴅᴇᴏ
-🔰 ᴄᴜsᴛᴏᴍs ᴛʜᴜᴍʙɴᴀɪʟ sᴜᴘᴘᴏʀᴛ
-🔰 ᴜsᴇʀs ᴄᴀɴ ʟᴏɢɪɴ ᴛᴏ ʙᴏᴛ ᴜsɪɴɢ ᴘᴀssᴡᴏʀᴅ
-🔰 ᴏᴡɴᴇʀ ᴄᴀɴ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs
+**ABOUT ME:**
+What can i do with this bot?
+┌ Merge **Video + Video(s)**
+├ Merge **Video + Audio(s)**
+├ Merge **Video + Subtitle(s)**
+└ Extract (video, audo, and subtitle)
 		""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                [InlineKeyboardButton("⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/+jNc0h3jrt1Q0ZmE1")],
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "📢 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/Matiz_Techz"
                     ),
                     InlineKeyboardButton(
-                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "👨‍💻𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫👨‍💻", url=f"https://t.me/{Config.OWNER_USERNAME}"
                     ),
                 ],
                 [InlineKeyboardButton("Close 🔐", callback_data="close")],
@@ -632,7 +624,7 @@ async def showQueue(c: Client, cb: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(markup),
         )
     except ValueError:
-        await cb.message.edit("Send Some more videos")
+        await cb.message.edit("Send Some More videos")
     return
 
 
@@ -712,8 +704,8 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([InlineKeyboardButton("🔗 Merge Now", callback_data="merge")])
-    markup.append([InlineKeyboardButton("💥 Clear Files", callback_data="cancel")])
+    markup.append([InlineKeyboardButton("♻️ 𝐌𝐞𝐫𝐠𝐞 𝐍𝐨𝐰", callback_data="merge")])
+    markup.append([InlineKeyboardButton("❌ 𝐂𝐥𝐞𝐚𝐫 𝐅𝐢𝐥𝐞𝐬", callback_data="cancel")])
     return markup
 
 
@@ -741,7 +733,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="𝐁𝐨𝐭 𝐁𝐨𝐨𝐬𝐭𝐞𝐝 𝐖𝐢𝐭𝐡 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐀𝐜𝐜𝐨𝐮𝐧𝐭 ,\n\n 𝐔𝐬𝐞 𝐎𝐮𝐫 𝐅𝐢𝐥𝐞 𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐀𝐧𝐝 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠 𝐁𝐨𝐭<a href='https://t.me/MPlaylink_New_Storage_Bot'>𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
