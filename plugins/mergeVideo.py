@@ -109,7 +109,7 @@ chat_id=cb.from_user.id, message_ids=list_message_ids ):
             _cache.append(vid_list[i])
     vid_list = _cache
     LOGGER.info(f"Trying to merge videos user {cb.from_user.id}")
-    await cb.message.edit(f"🔀 Trying to merge videos ...")
+    await cb.message.edit(f"♻️ Trying to merge videos ...")
     with open(input_, "w") as _list:
         _list.write("\n".join(vid_list))
     merged_video_path = await MergeVideo(
@@ -130,7 +130,7 @@ chat_id=cb.from_user.id, message_ids=list_message_ids ):
     file_size = os.path.getsize(merged_video_path)
     os.rename(merged_video_path, new_file_name)
     await cb.message.edit(
-        f"🔄 Renamed Merged Video to\n **{new_file_name.rsplit('/',1)[-1]}**"
+        f"✏️ Renamed Merged Video to\n **{new_file_name.rsplit('/',1)[-1]}**"
     )
     await asyncio.sleep(3)
     merged_video_path = new_file_name
@@ -156,7 +156,7 @@ chat_id=cb.from_user.id, message_ids=list_message_ids ):
         queueDB.update({cb.from_user.id: {"videos": [], "subtitles": [], "audios": []}})
         formatDB.update({cb.from_user.id: None})
         return
-    await cb.message.edit("🎥 Extracting Video Data ...")
+    await cb.message.edit("🗃 Extracting Video Data ...")
     duration = 1
     try:
         metadata = extractMetadata(createParser(merged_video_path))
