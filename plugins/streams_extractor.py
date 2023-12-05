@@ -15,7 +15,7 @@ from helpers.uploader import uploadFiles
 async def streamsExtractor(c: Client, cb:CallbackQuery ,media_mid, exAudios=False, exSubs=False):
     if not os.path.exists(f"downloads/{str(cb.from_user.id)}/"):
         os.makedirs(f"downloads/{str(cb.from_user.id)}/")
-    _hold = await cb.message.edit(text="Please wait")
+    _hold = await cb.message.edit(text="Please Wait.... Fetching File")
     omess:Message = await c.get_messages(chat_id=cb.from_user.id, message_ids=media_mid)
     try:
         if (omess.video or omess.document):
@@ -37,8 +37,8 @@ async def streamsExtractor(c: Client, cb:CallbackQuery ,media_mid, exAudios=Fals
         )
         if gDict[cb.message.chat.id] and cb.message.id in gDict[cb.message.chat.id]:
             return
-        await cb.message.edit(f"Downloaded Sucessfully ... `{media.file_name}`")
-        LOGGER.info(f"Downloaded Sucessfully ... {media.file_name}")
+        await cb.message.edit(f"Downloaded Sucessfully... `{media.file_name}`")
+        LOGGER.info(f"Downloaded Sucessfully... {media.file_name}")
         await asyncio.sleep(5)
     except UnknownError as e:
         LOGGER.info(e)
@@ -47,13 +47,13 @@ async def streamsExtractor(c: Client, cb:CallbackQuery ,media_mid, exAudios=Fals
         LOGGER.info(f"Failed to download Error: {downloadErr}")
         await cb.message.edit("Download Error")
         await asyncio.sleep(4)
-    await _hold.edit_text("Fetching data")
+    await _hold.edit_text("Fetching Data")
     await asyncio.sleep(3)
     if exAudios:
-        await _hold.edit_text("Extracting Audios")
+        await _hold.edit_text("Extracting Audios 🔊")
         extract_dir = await extractAudios(file_dl_path,cb.from_user.id)
     if exSubs:
-        await _hold.edit_text("Extracting Subtitles")
+        await _hold.edit_text("Extracting Subtitles 📜")
         extract_dir = await extractSubtitles(file_dl_path, cb.from_user.id)
 
     if extract_dir is None:
