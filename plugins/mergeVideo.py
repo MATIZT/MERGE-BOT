@@ -142,7 +142,7 @@ chat_id=cb.from_user.id, message_ids=list_message_ids ):
         return
     if file_size > 2044723200 and Config.IS_PREMIUM == False:
         await cb.message.edit(
-            f"Video is Larger than 2GB Can't Upload\n\n**Donate** Him @Md_Matin_Ashraf\n\nLittle Amount Of Money To Add\n\n**Premium Account** For 4GB TG Uploads **Total Amount Needs 3.99$ = 350₹** You Can Donate **According To You What You Want To Donate Like 0.2$ = 20₹** Your Little Help Will Pe Appricated And What You Donate You Can See Here Channel @Matiz_Techz"
+            f"➻Vɪᴅᴇᴏ ɪs Lᴀʀɢᴇʀ ᴛʜᴀɴ 𝟸GB Cᴀɴ'ᴛ Uᴘʟᴏᴀᴅ.\n➻ Dᴏɴᴀᴛᴇ Hɪᴍ @Md_Matin_Ashraf Lɪᴛᴛʟᴇ Aᴍᴏᴜɴᴛ Oғ Mᴏɴᴇʏ.\n➻ Tᴏ Aᴅᴅ Pʀᴇᴍɪᴜᴍ Aᴄᴄᴏᴜɴᴛ Fᴏʀ 𝟺GB TG Uᴘʟᴏᴀᴅs\n➻ Tᴏᴛᴀʟ Aᴍᴏᴜɴᴛ Nᴇᴇᴅs 𝟹.𝟿𝟿$ = 𝟹𝟻𝟶₹\n➻ Yᴏᴜʀ Lɪᴛᴛʟᴇ Hᴇʟᴘ Wɪʟʟ Pᴇ Aᴘᴘʀɪᴄᴀᴛᴇᴅ Aɴᴅ Wʜᴀᴛ Yᴏᴜ Dᴏɴᴀᴛᴇ Yᴏᴜ Cᴀɴ Sᴇᴇ Hᴇʀᴇ @Matiz_Techz 𝐓𝐡𝐚𝐧𝐤𝐬"
         )
         await delete_all(root=f"downloads/{str(cb.from_user.id)}")
         queueDB.update({cb.from_user.id: {"videos": [], "subtitles": [], "audios": []}})
